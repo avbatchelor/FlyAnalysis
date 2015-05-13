@@ -9,6 +9,7 @@ end
 
 D = fliplr(D);
 D = regexprep(D,'Acquisition','Raw_Data');
+D = regexprep(D,'Anthony Azevedo\\Raw\_Data','Alex\\Documents\\Data\\CalciumImagingData\\B1');
 remain = fliplr(remain);
 
 [prot,remain] = strtok(remain,'_');
@@ -26,6 +27,8 @@ indDot = regexp(name,'\.');
 dfile = name(~(1:length(name) >= ind_(end) & 1:length(name) < indDot(1)));
 dfile = regexprep(dfile,'_Raw','');
 dfile = regexprep(dfile,'Acquisition','Raw_Data');
+dfile = regexprep(dfile,'Anthony Azevedo\\Raw\_Data','Alex\\Documents\\Data\\CalciumImagingData\\B1');
+
 
 notesfile = fullfile(D,['notes_' d '_' fly '_' cell '.txt']);
 notesfile = regexprep(notesfile,'Acquisition','Raw_Data');
